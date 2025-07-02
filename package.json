@@ -1,0 +1,21 @@
+{
+  "name": "treatland-auto-bundle",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-detect-module src/index.js",
+    "dev": "nodemon --watch src --exec node --experimental-detect-module src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "csv-stringify": "^6.5.2",
+    "exceljs": "^4.4.0",
+    "nodemon": "^3.1.10"
+  }
+}
