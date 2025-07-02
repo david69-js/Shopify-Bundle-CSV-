@@ -27,7 +27,7 @@ async function run() {
 
   const inCsv = path.join(__dirname, 'csv', 'bundle-sku-input.csv');
   let currentGroup = null;
-  let stripe = false; // color toggle per grupo
+  let stripe = false; // color toggle per grup
 
   fs.createReadStream(inCsv)
     .pipe(parser)
@@ -48,7 +48,7 @@ async function run() {
           sync_price: defaultSyncPrice,
         });
 
-        // Aplica color por grupo
+        // change the color per group
         const color = stripe ? 'FFFFFFFF' : 'FFEEEEEE';
         newRow.eachCell(cell => {
           cell.fill = {
@@ -62,7 +62,7 @@ async function run() {
     .on('end', async () => {
       const outXlsx = path.join(__dirname, 'csv', 'bundle-sku-output.xlsx');
       await workbook.xlsx.writeFile(outXlsx);
-      console.log('✅ Archivo con zebra por grupo generado.');
+      console.log('Excel file created:', outXlsx);
     });
 }
 
